@@ -1,0 +1,8 @@
+- difference
+  - union
+      - Sort and deduplicate  
+  - union all
+      - Return the merged result directly, without sorting or deduplication
+- insight
+  - The implication of this, is that union is much less performant as it must scan the result for duplicates 
+  - UNION ALL can be slower than UNION in real-world cases where the network such as the internet, is a bottleneck. The cost of transferring many duplicate rows can exceed the query execution time benefit. This has to be analyzed on a case-by-case basis
