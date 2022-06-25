@@ -1,0 +1,2 @@
+- go清除本地缓存的所有依赖
+    - go clean --modcache

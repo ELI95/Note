@@ -1,0 +1,13 @@
+- scp 和 rsync 的区别
+    - scp
+        - secure copy
+        - scp用于远程拷贝文件，全量备份，系统开销较小
+        - scp是加密传输
+        - scp -r playground username@host:/tmp
+    - rsync
+        - remote synchronize
+        - rsync用于远程同步文件，只对差异文件做更新
+        - rsync不是加密传输
+        - rsync -avzr playground username@host:/tmp
+    - rsync是分块校验+传输，scp是整个文件传输
+    - rsync比scp有优势的地方在于单个大文件的一小部分存在改动时，只需传输改动部分，无需重新传输整个文件。如果传输一个新的文件，理论上rsync没有优势，scp对系统的负荷更小
